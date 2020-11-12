@@ -1,0 +1,129 @@
+:root {
+    /* Color Primary */
+    --moderateViolet: hsl(263, 55%, 52%);
+    --quoteIcon: hsl(281, 55%, 52%);
+    --darkGrayishBlue: hsl(217, 19%, 35%);
+    --boxShadow: hsl(219, 7%, 55%);
+    --darkBlackishBlue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Neutral */
+    --lightGray: hsl(0, 0%, 81%);
+    --lightGrayishBlue: hsl(210, 46%, 95%);
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: var(--lightGray);
+    font-size: 13px;
+}
+
+main {
+    display: grid;
+    justify-content: center;
+    grid-template-areas: 
+    "one one two five"
+    "three four four five";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, minmax(100px, 1fr));
+    width: 80%;
+    margin: 0 auto;
+}
+
+.icon {
+    position: absolute;
+    color: var(--quoteIcon);
+    font-size: 10em;
+    top:0;
+    right: 0.3em;
+}
+
+.testimonial {
+    padding: 1.5em;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 7px 20px var(--boxShadow);
+}
+
+.testimonial p {
+    font-weight: 200;
+    text-align: justify;
+}
+
+img {
+    position: absolute;
+    border-radius: 50px;
+}
+
+.name {
+    margin: 0;
+    padding: 5px 0 0 0;
+}
+.verified {
+    margin: 0;
+    font-weight: 200;
+}
+
+.user {
+    position: relative;
+    margin-left: 6em;
+    font-weight: 600;
+}
+
+.one h2, .two h2, .four h2 {
+    position: relative;
+    z-index: 1;
+    color: var(--white);
+}
+
+.one .profile .user .name, 
+.two .profile .user .name, 
+.four .profile .user .name {
+    color: var(--white);
+}
+
+.one {
+    position: relative;
+    grid-area: one;
+    background-color: var(--moderateViolet);
+    color: var(--lightGray);
+}
+.two {
+    grid-area: two;
+    background-color: var(--darkGrayishBlue);
+    color: var(--lightGray);
+}
+.three {
+    grid-area: three;
+    background-color: var(--white);
+    color: var(--darkGrayishBlue);
+}
+.four {
+    grid-area: four;
+    background-color: var(--darkBlackishBlue);
+    color: var(--lightGray);
+}
+.five {
+    grid-area: five;
+    background-color: var(--white);
+    color: var(--darkGrayishBlue);
+}
+
+@media (max-width: 1000px) {
+    body {
+        height: 100%;
+    }
+    main {
+        grid-template-areas: 
+        "one"
+        "two"
+        "three"
+        "four"
+        "five";
+        grid-template-columns: 1fr;
+    }
+}
